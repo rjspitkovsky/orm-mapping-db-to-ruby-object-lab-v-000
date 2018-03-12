@@ -74,7 +74,18 @@ class Student
       tenth_grade_array[0..num-1]
   end
 
+  def self.first_student_in_grade_10
+    sql = <<-SQL
+    SELECT *
+    FROM students
+    WHERE grade = 10
+    LIMIT 1
+    SQL
 
+    DB[:conn].execute(sql).map do |row|
+      self.new_from_db
+    end
+  end 
 
 
 
