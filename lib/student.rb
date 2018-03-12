@@ -69,7 +69,7 @@ class Student
     SQL
 
     tenth_grade_array = []
-    while tenth_grade_array.length < num
+    while tenth_grade_array.size < num
       DB[:conn].execute(sql).each do |row|
         tenth_grade_array << self.new_from_db(row)
       end
