@@ -59,7 +59,23 @@ class Student
     DB[:conn].execute(sql).map do |row|
       self.new_from_db(row)
     end
-  end 
+  end
+
+  def self.first_X_students_in_grade_10(num)
+    sql = <<-SQL
+    SELECT *
+    FROM students
+    WHERE grade = 10
+    SQL
+
+    tenth_grade_array = []
+    while tenth_grade_array.length < num
+      DB[:conn].execute(sql).map do |row|
+        tenth_grade_array << self.new_from_db(row)
+      end
+      tenth_grade_array
+    end 
+
 
 
 
