@@ -83,7 +83,7 @@ class Student
 
     DB[:conn].execute(sql).find do |row|
     student = self.new_from_db
-    student.grade == 10 
+    student.grade == 10
     end
   end
 
