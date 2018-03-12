@@ -81,9 +81,10 @@ class Student
     WHERE grade = 10
     SQL
 
-    DB[:conn].execute(sql).each do |row|
-      self.new_from_db
-    end.first
+    DB[:conn].execute(sql).find do |row|
+    student = self.new_from_db
+    student.grade == 10 
+    end
   end
 
 
