@@ -81,9 +81,9 @@ class Student
     WHERE grade = 10
     SQL
 
-    DB[:conn].execute(sql).each do |row|
+    DB[:conn].execute(sql).map do |row|
       self.new_from_db
-    end
+    end.first
   end
 
 
