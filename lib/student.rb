@@ -71,10 +71,9 @@ class Student
     tenth_grade_array = []
       DB[:conn].execute(sql).each do |row|
         student = self.new_from_db(row)
-        tenth_grade_array << student 
+        tenth_grade_array << student
       end
       tenth_grade_array[0..num-1]
-    end
   end
 
 
