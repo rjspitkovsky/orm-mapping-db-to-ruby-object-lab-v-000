@@ -84,7 +84,7 @@ class Student
 
     DB[:conn].execute(sql).each do |row|
       self.new_from_db
-    end.first
+    end
   end
 
 
