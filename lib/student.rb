@@ -74,7 +74,8 @@ class Student
         tenth_grade_array << self.new_from_db(row)
       end
       tenth_grade_array
-    end 
+    end
+  end 
 
 
 
